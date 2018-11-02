@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:f="http://java.sun.com/jsf/core"
+ xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Banca</title>
+    </h:head>
+    <h:body style="font-family:Palatino">
+        <div align='center'>
+        <a href = "/client.jar">Client app</a>
+            <h1>Bancă Enterprise</h1>
+                 Conturi
+                 <br></br>
+        <img src="bank.png"/>
+        <br></br>
+        <br></br>
+        <table width="350">
+            <tr>
+                <td>
+                    Număr cont
+                </td>
+                <td>
+                    Suma
+                </td>
+            </tr>
+            <tr>
+                <td>                 
+                    #{accountBean.checkingAccountNumber}
+                </td>
+                <td>
+                    <h:outputText value="#{accountBean.checkingBalance}">
+                        <f:convertNumber currencyCode="RON" type="currency" />
+                    </h:outputText>  
+                </td>
+            </tr>
+        </table>
+        <h:form>
+            <h:commandButton action='plateste' value="Plătește facturi"/>
+        </h:form>
+        </div>
+    </h:body>
+</html>
+
